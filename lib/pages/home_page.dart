@@ -4,6 +4,8 @@ import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/size.dart';
 import 'package:portfolio_web/widgets/header_bar.dart';
 import 'package:portfolio_web/widgets/header_bar_mobile.dart';
+import 'package:portfolio_web/widgets/main_desktop.dart';
+import 'package:portfolio_web/widgets/main_mobile.dart';
 import 'package:portfolio_web/widgets/mobile_view_drawer.dart';
 
 class Homepage extends StatefulWidget {
@@ -18,6 +20,8 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
@@ -38,6 +42,16 @@ class _HomepageState extends State<Homepage> {
                 },
               ),
 
+            if (constraints.maxWidth >= minDesktopWindowWidth)
+              MainDesktopView(
+                screenWidth: screenSize.width,
+                screenHeight: screenSize.height,
+              )
+            else
+              MainMobileView(
+                screenWidth: screenSize.width,
+                screenHeight: screenSize.height,
+              ),
             //Skills
             Container(
               height: 500,
