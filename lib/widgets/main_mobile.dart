@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
+import 'package:portfolio_web/styles/style.dart';
 
 class MainMobileView extends StatelessWidget {
   const MainMobileView({
@@ -42,7 +43,7 @@ class MainMobileView extends StatelessWidget {
             height: 30,
           ),
           const Text(
-            "Hi,\nI'm Sagar Sinha\nA Fullstack Developer",
+            "Hi,\nI'm Sagar Sinha\nA FullStack Developer",
             style: TextStyle(
               fontSize: 24.0,
               height: 1.5,
@@ -58,7 +59,11 @@ class MainMobileView extends StatelessWidget {
             width: 250,
             child: ElevatedButton(
               onPressed: () {},
-              child: const Text("Get in touch"),
+              style: elevatedButtonStyle,
+              child: const Text(
+                "Get in touch",
+                style: elevatedButtonTextStyle,
+              ),
             ),
           ),
           //elevated button

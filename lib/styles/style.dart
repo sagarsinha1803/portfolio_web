@@ -10,3 +10,13 @@ BoxDecoration navBoxdecorate = BoxDecoration(
   ),
   borderRadius: BorderRadius.circular(100),
 );
+
+ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
+  backgroundColor: CustomColor.yellowPrimary,
+);
+
+const TextStyle elevatedButtonTextStyle = TextStyle(
+  color: CustomColor.whitePrimary,
+  fontWeight: FontWeight.w500,
+  fontSize: 15,
+);

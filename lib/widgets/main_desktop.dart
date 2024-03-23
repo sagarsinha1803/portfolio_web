@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
+import 'package:portfolio_web/styles/style.dart';
 
 class MainDesktopView extends StatelessWidget {
   const MainDesktopView({
@@ -28,7 +29,7 @@ class MainDesktopView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Hi,\nI'm Sagar Sinha\nA Fullstack Developer",
+                "Hi,\nI'm Sagar Sinha\nA FullStack Developer",
                 style: TextStyle(
                   fontSize: 30.0,
                   height: 1.5,
@@ -44,14 +45,27 @@ class MainDesktopView extends StatelessWidget {
                 width: 250,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text("Get in touch"),
+                  style: elevatedButtonStyle,
+                  child: const Text(
+                    "Get in touch",
+                    style: elevatedButtonTextStyle,
+                  ),
                 ),
               ),
             ],
           ),
-          Image.asset(
-            "assets/geeky_monkey.png",
-            width: screenWidth / 2.5,
+          ShaderMask(
+            shaderCallback: (bounds) {
+              return LinearGradient(colors: [
+                CustomColor.whitePrimary.withOpacity(0.9),
+                CustomColor.whiteSecondary.withOpacity(1),
+                CustomColor.yellowPrimary.withOpacity(0.8),
+              ]).createShader(bounds);
+            },
+            child: Image.asset(
+              "assets/geeky_monkey.png",
+              width: screenWidth / 2.5,
+            ),
           )
         ],
       ),
