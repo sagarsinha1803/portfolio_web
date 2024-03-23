@@ -4,7 +4,11 @@ import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/size.dart';
 import 'package:portfolio_web/widgets/header_bar.dart';
 import 'package:portfolio_web/widgets/header_bar_mobile.dart';
+import 'package:portfolio_web/widgets/main_desktop.dart';
+import 'package:portfolio_web/widgets/main_mobile.dart';
 import 'package:portfolio_web/widgets/mobile_view_drawer.dart';
+import 'package:portfolio_web/widgets/skill_destop.dart';
+import 'package:portfolio_web/widgets/skill_mobile.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -18,6 +22,8 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
@@ -38,15 +44,45 @@ class _HomepageState extends State<Homepage> {
                 },
               ),
 
+            if (constraints.maxWidth >= minDesktopWindowWidthImage)
+              MainDesktopView(
+                screenWidth: screenSize.width,
+                screenHeight: screenSize.height,
+              )
+            else
+              MainMobileView(
+                screenWidth: screenSize.width,
+                screenHeight: screenSize.height,
+              ),
             //Skills
             Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-              child: const Center(
-                child: Text("Skills"),
+              width: screenSize.width,
+              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              color: CustomColor.bgLight1,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  //Title
+                  const Text(
+                    "What I can do",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  // Platform and skill
+                  if (constraints.maxWidth >= minSkillWindowWidth)
+                    const SkillDesktopView()
+                  else
+                    const SkillMobileView()
+                ],
               ),
             ),
+
             //Projects
             Container(
               height: 500,
