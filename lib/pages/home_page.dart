@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/size.dart';
+import 'package:portfolio_web/widgets/contact_section.dart';
+import 'package:portfolio_web/widgets/footer_section.dart';
 import 'package:portfolio_web/widgets/header_bar.dart';
 import 'package:portfolio_web/widgets/header_bar_mobile.dart';
 import 'package:portfolio_web/widgets/main_desktop.dart';
 import 'package:portfolio_web/widgets/main_mobile.dart';
 import 'package:portfolio_web/widgets/mobile_view_drawer.dart';
+import 'package:portfolio_web/widgets/project_section.dart';
 import 'package:portfolio_web/widgets/skill_destop.dart';
 import 'package:portfolio_web/widgets/skill_mobile.dart';
 
@@ -84,30 +87,16 @@ class _HomepageState extends State<Homepage> {
             ),
 
             //Projects
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              child: const Center(
-                child: Text("Projects"),
-              ),
+            ProjectSection(
+              screenWidth: screenSize.width,
             ),
             //Contact
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-              child: const Center(
-                child: Text("Contact"),
-              ),
-            ),
+            const ContactSection(),
             //Footer
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              child: const Center(
-                child: Text("Footer"),
-              ),
-            )
+            const SizedBox(
+              height: 30,
+            ),
+            const Footer(),
           ],
         ),
       );
