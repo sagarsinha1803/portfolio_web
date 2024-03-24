@@ -52,6 +52,13 @@ List<ProjectUtils> hobbyProjects = [
     androidLink: 'https://www.google.com/',
     webLink: 'https://www.google.com/',
   ),
+  ProjectUtils(
+    image: 'assets/projects/my_portfolio_project.png',
+    title: 'Hobby Project 5',
+    subTitle: 'This website will showcase my resume and portfolio',
+    androidLink: 'https://www.google.com/',
+    webLink: 'https://www.google.com/',
+  ),
 ];
 
 // WORK PROJECTS
