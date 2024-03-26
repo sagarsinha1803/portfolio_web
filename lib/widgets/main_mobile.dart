@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/styles/style.dart';
+import 'package:portfolio_web/widgets/animated_intro.dart';
 
 class MainMobileView extends StatelessWidget {
   const MainMobileView({
@@ -42,15 +43,11 @@ class MainMobileView extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text(
-            "Hi,\nI'm Sagar Sinha\nA FullStack Developer",
-            style: TextStyle(
-              fontSize: 24.0,
-              height: 1.5,
-              wordSpacing: 3.5,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
-            ),
+          const AnimatedIntro(
+            fontsSize: 24,
+            fontsHeight: 1.5,
+            wordsSpacing: 3.5,
+            fontFamily: 'Horizon',
           ),
           const SizedBox(
             height: 15,

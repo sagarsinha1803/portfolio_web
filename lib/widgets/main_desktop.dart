@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/styles/style.dart';
+import 'package:portfolio_web/widgets/animated_intro.dart';
 
 class MainDesktopView extends StatelessWidget {
   const MainDesktopView({
@@ -28,15 +29,11 @@ class MainDesktopView extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Hi,\nI'm Sagar Sinha\nA FullStack Developer",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  height: 1.5,
-                  wordSpacing: 3.5,
-                  fontWeight: FontWeight.bold,
-                  color: CustomColor.whitePrimary,
-                ),
+              const AnimatedIntro(
+                fontsSize: 30.0,
+                fontsHeight: 1.5,
+                wordsSpacing: 3.5,
+                fontFamily: 'Horizon',
               ),
               const SizedBox(
                 height: 15,
@@ -64,7 +61,7 @@ class MainDesktopView extends StatelessWidget {
             },
             child: Image.asset(
               "assets/geeky_monkey.png",
-              width: screenWidth / 2.5,
+              width: screenWidth / 3,
             ),
           )
         ],

@@ -4,4 +4,5 @@ class ProfileLinks {
   static const String instagram = "https://";
   static const String linkedin = "https://";
   static const String github = "https://github.com/sagarsinha1803";
+  static const String blog = "https://github.com/sagarsinha1803";
 }

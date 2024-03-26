@@ -5,7 +5,12 @@ import 'package:portfolio_web/styles/style.dart';
 import 'package:portfolio_web/widgets/nav_logo.dart';
 
 class HeaderBar extends StatelessWidget {
-  const HeaderBar({super.key});
+  const HeaderBar({
+    super.key,
+    required this.onNavItemTap,
+  });
+
+  final Function(int) onNavItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,9 @@ class HeaderBar extends StatelessWidget {
                 right: 20.0,
               ),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onNavItemTap(i);
+                },
                 child: Text(
                   navTitles[i],
                   style: const TextStyle(

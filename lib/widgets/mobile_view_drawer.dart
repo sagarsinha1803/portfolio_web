@@ -3,7 +3,11 @@ import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/nav_items.dart';
 
 class MobileViewDrawer extends StatelessWidget {
-  const MobileViewDrawer({super.key});
+  const MobileViewDrawer({
+    super.key,
+    required this.onNavItemTap,
+  });
+  final Function(int) onNavItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,9 @@ class MobileViewDrawer extends StatelessWidget {
                 color: CustomColor.whitePrimary,
               ),
               leading: Icon(navIcons[i]),
-              onTap: () {},
+              onTap: () {
+                onNavItemTap(i);
+              },
               title: Text(navTitles[i]),
             )
         ],

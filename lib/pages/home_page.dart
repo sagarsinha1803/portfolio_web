@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:portfolio_web/constants/colors.dart';
+import 'package:portfolio_web/constants/profile_data.dart';
 import 'package:portfolio_web/constants/size.dart';
 import 'package:portfolio_web/widgets/contact_section.dart';
 import 'package:portfolio_web/widgets/footer_section.dart';
@@ -12,6 +13,7 @@ import 'package:portfolio_web/widgets/mobile_view_drawer.dart';
 import 'package:portfolio_web/widgets/project_section.dart';
 import 'package:portfolio_web/widgets/skill_destop.dart';
 import 'package:portfolio_web/widgets/skill_mobile.dart';
+import 'dart:js' as js;
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -22,6 +24,8 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
+  final List<GlobalKey> navBarkeys = List.generate(4, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -33,73 +37,107 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: CustomColor.scaffoldBg,
         endDrawer: constraints.maxWidth >= minDesktopWindowWidth
             ? null
-            : const MobileViewDrawer(),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            if (constraints.maxWidth >= minDesktopWindowWidth)
-              const HeaderBar()
-            else
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
+            : MobileViewDrawer(
+                onNavItemTap: (int navIndex) {
+                  scaffoldKey.currentState?.closeEndDrawer();
+                  scrollToSection(navIndex);
                 },
               ),
-
-            if (constraints.maxWidth >= minDesktopWindowWidthImage)
-              MainDesktopView(
-                screenWidth: screenSize.width,
-                screenHeight: screenSize.height,
-              )
-            else
-              MainMobileView(
-                screenWidth: screenSize.width,
-                screenHeight: screenSize.height,
+        body: SingleChildScrollView(
+          controller: scrollController,
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SizedBox(
+                key: navBarkeys.first,
               ),
-            //Skills
-            Container(
-              width: screenSize.width,
-              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              color: CustomColor.bgLight1,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  //Title
-                  const Text(
-                    "What I can do",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.whitePrimary,
+              if (constraints.maxWidth >= minDesktopWindowWidth)
+                HeaderBar(
+                  onNavItemTap: (int navIndex) {
+                    scrollToSection(navIndex);
+                  },
+                )
+              else
+                HeaderMobile(
+                  onLogoTap: () {},
+                  onMenuTap: () {
+                    scaffoldKey.currentState?.openEndDrawer();
+                  },
+                ),
+
+              if (constraints.maxWidth >= minDesktopWindowWidthImage)
+                MainDesktopView(
+                  screenWidth: screenSize.width,
+                  screenHeight: screenSize.height,
+                )
+              else
+                MainMobileView(
+                  screenWidth: screenSize.width,
+                  screenHeight: screenSize.height,
+                ),
+              //Skills
+              Container(
+                key: navBarkeys[1],
+                width: screenSize.width,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //Title
+                    const Text(
+                      "What I can do",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  // Platform and skill
-                  if (constraints.maxWidth >= minSkillWindowWidth)
-                    const SkillDesktopView()
-                  else
-                    const SkillMobileView()
-                ],
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    // Platform and skill
+                    if (constraints.maxWidth >= minSkillWindowWidth)
+                      const SkillDesktopView()
+                    else
+                      const SkillMobileView()
+                  ],
+                ),
               ),
-            ),
 
-            //Projects
-            ProjectSection(
-              screenWidth: screenSize.width,
-            ),
-            //Contact
-            const ContactSection(),
-            //Footer
-            const SizedBox(
-              height: 30,
-            ),
-            const Footer(),
-          ],
+              //Projects
+              ProjectSection(
+                key: navBarkeys[2],
+                screenWidth: screenSize.width,
+              ),
+              //Contact
+              ContactSection(
+                key: navBarkeys[3],
+              ),
+              //Footer
+              const SizedBox(
+                height: 30,
+              ),
+              const Footer(),
+            ],
+          ),
         ),
       );
     });
+  }
+
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      // open a page
+      js.context.callMethod("open", [ProfileLinks.blog]);
+    }
+    final key = navBarkeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(
+        milliseconds: 1000,
+      ),
+      curve: Curves.easeInOut,
+    );
   }
 }
