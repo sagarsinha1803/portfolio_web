@@ -33,6 +33,7 @@ class MainDesktopView extends StatelessWidget {
                 fontsSize: 30.0,
                 fontsHeight: 1.5,
                 wordsSpacing: 3.5,
+                fontFamily: 'Horizon',
               ),
               const SizedBox(
                 height: 15,
@@ -60,7 +61,7 @@ class MainDesktopView extends StatelessWidget {
             },
             child: Image.asset(
               "assets/geeky_monkey.png",
-              width: screenWidth / 2.5,
+              width: screenWidth / 3,
             ),
           )
         ],

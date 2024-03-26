@@ -47,6 +47,7 @@ class MainMobileView extends StatelessWidget {
             fontsSize: 24,
             fontsHeight: 1.5,
             wordsSpacing: 3.5,
+            fontFamily: 'Horizon',
           ),
           const SizedBox(
             height: 15,

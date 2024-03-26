@@ -6,12 +6,14 @@ class AnimatedIntro extends StatelessWidget {
   final double fontsSize;
   final double fontsHeight;
   final double wordsSpacing;
+  final String fontFamily;
 
   const AnimatedIntro({
     super.key,
     required this.fontsSize,
     required this.fontsHeight,
     required this.wordsSpacing,
+    required this.fontFamily,
   });
 
   @override
@@ -21,7 +23,9 @@ class AnimatedIntro extends StatelessWidget {
       fontSize: fontsSize + 10,
       height: fontsHeight,
       wordSpacing: wordsSpacing,
+      fontFamily: fontFamily,
     );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -35,7 +39,9 @@ class AnimatedIntro extends StatelessWidget {
               WavyAnimatedText('Hello World!',
                   speed: const Duration(milliseconds: 200)),
             ],
-            isRepeatingAnimation: false,
+            pause: const Duration(milliseconds: 1000),
+            repeatForever: true,
+            isRepeatingAnimation: true,
             onTap: () {
               print(
                 "Tap Event",
@@ -46,11 +52,12 @@ class AnimatedIntro extends StatelessWidget {
         Row(
           children: [
             Text(
-              'I am ',
+              "I am ",
               style: TextStyle(
                 fontSize: fontsSize,
                 height: fontsHeight,
                 color: CustomColor.whitePrimary,
+                fontFamily: fontFamily,
               ),
             ),
             DefaultTextStyle(
@@ -62,15 +69,14 @@ class AnimatedIntro extends StatelessWidget {
                 animatedTexts: [
                   ColorizeAnimatedText(
                     'Sagar Sinha',
-                    speed: const Duration(milliseconds: 1000),
+                    speed: const Duration(milliseconds: 250),
                     textStyle: TextStyle(
                       fontSize: fontsSize + 20,
-                      fontFamily: 'Horizon',
+                      fontFamily: fontFamily,
                     ),
                     colors: colorizeColors,
                   ),
                 ],
-                pause: const Duration(milliseconds: 3000),
                 isRepeatingAnimation: true,
                 repeatForever: true,
                 onTap: () {
@@ -84,6 +90,7 @@ class AnimatedIntro extends StatelessWidget {
           style: TextStyle(
             fontSize: fontsSize,
             color: CustomColor.whitePrimary,
+            fontFamily: fontFamily,
           ),
           child: AnimatedTextKit(
             repeatForever: true,
