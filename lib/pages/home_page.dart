@@ -10,7 +10,7 @@ import 'package:portfolio_web/widgets/header_bar_mobile.dart';
 import 'package:portfolio_web/widgets/main_desktop.dart';
 import 'package:portfolio_web/widgets/main_mobile.dart';
 import 'package:portfolio_web/widgets/mobile_view_drawer.dart';
-import 'package:portfolio_web/widgets/project_section.dart';
+import 'package:portfolio_web/widgets/project_tabview.dart';
 import 'package:portfolio_web/widgets/skill_destop.dart';
 import 'package:portfolio_web/widgets/skill_mobile.dart';
 import 'dart:js' as js;
@@ -106,10 +106,30 @@ class _HomepageState extends State<Homepage> {
               ),
 
               //Projects
-              ProjectSection(
-                key: navBarkeys[2],
-                screenWidth: screenSize.width,
-              ),
+              // ProjectSection(
+              //   key: navBarkeys[2],
+              //   screenWidth: screenSize.width,
+              // ),
+              // if (constraints.maxWidth >= minSkillWindowWidth)
+              //   ProjectTabView(
+              //     key: navBarkeys[2],
+              //     screenHeight: screenSize.height,
+              //     screenWidth: screenSize.width / 3,
+              //   )
+              // else
+              // ProjectTabView(
+              //   key: navBarkeys[2],
+              //   screenHeight: screenSize.height,
+              //   screenWidth: screenSize.width * 3,
+              // ),
+              SizedBox(
+                  height: screenSize.height / 1.4,
+                  child: ProjectTabView(
+                    key: navBarkeys[2],
+                    constrainMaxWidth: constraints.maxWidth,
+                    screenHeight: screenSize.height,
+                    screenWidth: screenSize.width * 3,
+                  )),
               //Contact
               ContactSection(
                 key: navBarkeys[3],

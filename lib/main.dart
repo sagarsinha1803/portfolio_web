@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       title: 'Sagar Sinha',
       home: const Homepage(),
+      // home: ProjectTabView(),
     );
   }
 }

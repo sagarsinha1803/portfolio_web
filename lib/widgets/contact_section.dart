@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/profile_data.dart';
 import 'package:portfolio_web/constants/size.dart';
@@ -17,12 +18,12 @@ class ContactSection extends StatelessWidget {
       child: Column(
         children: [
           //Title
-          const Text(
+          Text(
             "Get in touch",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+            style: GoogleFonts.sriracha(
               color: CustomColor.whitePrimary,
+              fontSize: 40,
+              wordSpacing: 5,
             ),
           ),
           const SizedBox(
