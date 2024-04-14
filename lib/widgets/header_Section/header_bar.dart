@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/nav_items.dart';
 import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/nav_logo.dart';
+import 'package:portfolio_web/widgets/header_section/nav_logo.dart';
 
 class HeaderBar extends StatelessWidget {
   const HeaderBar({

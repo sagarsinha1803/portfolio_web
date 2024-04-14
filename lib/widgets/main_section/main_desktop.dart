@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/animated_intro.dart';
+import 'package:portfolio_web/widgets/main_section/animated_intro.dart';
 
 class MainDesktopView extends StatelessWidget {
   const MainDesktopView({
@@ -55,12 +56,16 @@ class MainDesktopView extends StatelessWidget {
             shaderCallback: (bounds) {
               return LinearGradient(colors: [
                 CustomColor.whitePrimary.withOpacity(0.9),
-                CustomColor.whiteSecondary.withOpacity(1),
-                CustomColor.yellowPrimary.withOpacity(0.8),
+                CustomColor.whiteSecondary.withOpacity(0.9),
+                CustomColor.yellowPrimary.withOpacity(0.9),
               ]).createShader(bounds);
             },
-            child: Image.asset(
-              "assets/geeky_monkey.png",
+            // child: Image.asset(
+            //   "assets/geeky_monkey.png",
+            //   width: screenWidth / 3,
+            // ),
+            child: Lottie.asset(
+              'assets/animation/QPNON3mT8Y.json',
               width: screenWidth / 3,
             ),
           )

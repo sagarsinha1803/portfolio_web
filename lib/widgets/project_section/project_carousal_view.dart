@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/utils/project_utils.dart';
-import 'package:portfolio_web/widgets/project_card_widget.dart';
+import 'package:portfolio_web/widgets/project_section/project_card_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProjectsCarouselView extends StatefulWidget {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/animated_intro.dart';
+import 'package:portfolio_web/widgets/main_section/animated_intro.dart';
 
 class MainMobileView extends StatelessWidget {
   const MainMobileView({
@@ -27,14 +28,19 @@ class MainMobileView extends StatelessWidget {
           ShaderMask(
             shaderCallback: (bounds) {
               return LinearGradient(colors: [
-                CustomColor.scaffoldBg.withOpacity(0.6),
-                CustomColor.whitePrimary.withOpacity(0.5),
-                CustomColor.yellowPrimary.withOpacity(0.6),
+                CustomColor.scaffoldBg.withOpacity(0.9),
+                CustomColor.whitePrimary.withOpacity(0.9),
+                CustomColor.yellowPrimary.withOpacity(0.9),
               ]).createShader(bounds);
             },
             // blendMode: BlendMode.srcATop,
-            child: Image.asset(
-              "assets/geeky_monkey.png",
+            // child: Image.asset(
+            //   "assets/geeky_monkey.png",
+            //   width: screenWidth,
+            //   height: screenHeight / 2.0,
+            // ),
+            child: Lottie.asset(
+              'assets/animation/QPNON3mT8Y.json',
               width: screenWidth,
               height: screenHeight / 2.0,
             ),

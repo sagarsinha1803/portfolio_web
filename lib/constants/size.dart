@@ -11,3 +11,16 @@ const double minProjectTab2Width = 600;
 const double minAnimationTextDesktopWidth = 800;
 const double minAnimationTextTabWidth = 800;
 const double minAnimationTextMobileWidth = 600;
+
+const Map<String, double> headerSectionSize = {
+  "desktop": 600.00,
+};
+
+const Map<String, double> mainSectionSize = {
+  "desktop": 600.00,
+};
+
+const Map<String, double> skillSectionSize = {
+  "desktop": 1400.00,
+  "tablet": 900.00,
+};
