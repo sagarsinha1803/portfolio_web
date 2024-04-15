@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_web/constants/colors.dart';
 
 class AnimatedIntro extends StatelessWidget {
@@ -18,46 +19,49 @@ class AnimatedIntro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle typeWriterTextStyle = TextStyle(
+    // TextStyle typeWriterTextStyle = TextStyle(
+    //   color: CustomColor.whitePrimary,
+    //   fontSize: fontsSize + 10,
+    //   height: fontsHeight,
+    //   wordSpacing: wordsSpacing,
+    //   fontFamily: fontFamily,
+    // );
+    TextStyle typeWriterTextStyle = GoogleFonts.walterTurncoat(
       color: CustomColor.whitePrimary,
-      fontSize: fontsSize + 10,
+      fontSize: fontsSize + 7,
       height: fontsHeight,
       wordSpacing: wordsSpacing,
-      fontFamily: fontFamily,
     );
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         DefaultTextStyle(
           style: TextStyle(
-            fontSize: fontsSize + 5,
+            fontSize: fontsSize,
             color: CustomColor.whitePrimary,
           ),
           child: AnimatedTextKit(
             animatedTexts: [
               WavyAnimatedText('Hello World!',
+                  textStyle: GoogleFonts.patrickHandSc(
+                    fontSize: fontsSize + 10,
+                  ),
                   speed: const Duration(milliseconds: 200)),
             ],
             pause: const Duration(milliseconds: 1000),
             repeatForever: true,
             isRepeatingAnimation: true,
-            onTap: () {
-              print(
-                "Tap Event",
-              );
-            },
+            onTap: () {},
           ),
         ),
         Row(
           children: [
             Text(
-              "I am ",
-              style: TextStyle(
-                fontSize: fontsSize,
+              "I'm ",
+              style: GoogleFonts.rockSalt(
+                fontSize: fontsSize - 5,
                 height: fontsHeight,
                 color: CustomColor.whitePrimary,
-                fontFamily: fontFamily,
               ),
             ),
             DefaultTextStyle(
@@ -70,18 +74,16 @@ class AnimatedIntro extends StatelessWidget {
                   ColorizeAnimatedText(
                     'Sagar Sinha',
                     speed: const Duration(milliseconds: 250),
-                    textStyle: TextStyle(
-                      fontSize: fontsSize + 20,
-                      fontFamily: fontFamily,
+                    textStyle: GoogleFonts.sedgwickAveDisplay(
+                      fontSize: fontsSize + 30,
+                      // fontFamily: fontFamily,
                     ),
                     colors: colorizeColors,
                   ),
                 ],
                 isRepeatingAnimation: true,
                 repeatForever: true,
-                onTap: () {
-                  print("Tap Event");
-                },
+                onTap: () {},
               ),
             ),
           ],
@@ -113,9 +115,7 @@ class AnimatedIntro extends StatelessWidget {
             ],
             // pause: const Duration(milliseconds: 500),
             isRepeatingAnimation: true,
-            onTap: () {
-              print("Tap Event");
-            },
+            onTap: () {},
           ),
         ),
       ],

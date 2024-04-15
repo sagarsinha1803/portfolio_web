@@ -1,86 +1,113 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/constants/profile_data.dart';
 import 'package:portfolio_web/constants/size.dart';
+import 'package:portfolio_web/constants/svg_string.dart';
 import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/custome_textfield.dart';
+import 'package:portfolio_web/widgets/contact_section/custome_textfield.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:js' as js;
 
 class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
+  final double screenWidth;
+  const ContactSection({
+    super.key,
+    required this.screenWidth,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      color: CustomColor.bgLight1,
+      color: CustomColor.bgLight1.withOpacity(0.3),
       child: Column(
         children: [
-          //Title
-          const Text(
+          Text(
             "Get in touch",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+            style: GoogleFonts.sriracha(
               color: CustomColor.whitePrimary,
+              fontSize: 40,
+              wordSpacing: 5,
             ),
           ),
-          const SizedBox(
-            height: 50,
-          ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 700,
-              maxHeight: 100,
-            ),
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth >= minDesktopWindowWidthImage) {
-                  return buildNameEmailFieldDesktop();
-                } else {
-                  return buildNameEmailFiledMobile();
-                }
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 700,
-            ),
-            child: const CustomTextField(
-              hintText: "Your Message",
-              maxLines: 16,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          //send Button
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 700,
-            ),
-            child: SizedBox(
-              width: double.maxFinite,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: elevatedButtonStyle,
-                child: const Text(
-                  "Get in touch",
-                  style: elevatedButtonTextStyle,
-                ),
+          Flex(
+            direction: screenWidth > 1300 ? Axis.horizontal : Axis.vertical,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SvgPicture.string(
+                svgString,
+                // colorFilter: ColorFilter.mode(
+                // CustomColor.yellowPrimary.withOpacity(0.5), BlendMode.srcIn),
+                alignment: Alignment.center,
+                width: screenWidth > 1300 ? screenWidth / 3 : screenWidth / 2,
+                fit: BoxFit.fitHeight,
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
+              Column(
+                children: [
+                  //Title
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: 700,
+                      maxHeight: 100,
+                    ),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        if (constraints.maxWidth >=
+                            minDesktopWindowWidthImage) {
+                          return buildNameEmailFieldDesktop();
+                        } else {
+                          return buildNameEmailFiledMobile();
+                        }
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: 700,
+                    ),
+                    child: const CustomTextField(
+                      hintText: "Your Message",
+                      maxLines: 16,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  //send Button
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: 700,
+                    ),
+                    child: SizedBox(
+                      width: double.maxFinite,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: elevatedButtonStyle,
+                        child: const Text(
+                          "Get in touch",
+                          style: elevatedButtonTextStyle,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  // Icon Button Links
+                ],
+              ),
+            ],
           ),
           ConstrainedBox(
             constraints: const BoxConstraints(
-              maxWidth: 300,
+              maxWidth: 1000,
             ),
             child: const Divider(),
           ),
@@ -139,7 +166,6 @@ class ContactSection extends StatelessWidget {
               ),
             ],
           )
-          // Icon Button Links
         ],
       ),
     );
