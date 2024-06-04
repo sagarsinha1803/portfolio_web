@@ -90,7 +90,7 @@ class _HomepageState extends State<Homepage>
                   controller: _controller,
                 ),
                 SizedBox(
-                  height: screenSize.height / 1.4,
+                  height: screenSize.height / 1.2,
                   child: ProjectTabView(
                     key: navBarkeys[2],
                     constrainMaxWidth: constraints.maxWidth,
