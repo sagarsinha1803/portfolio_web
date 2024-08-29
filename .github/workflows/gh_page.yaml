@@ -35,6 +35,7 @@ jobs:
         #   ls -la
         #   cat home_page.dart
         # working-directory: ${{ github.workspace }}
-
+      - name: flutter doctor -v
+        run: flutter doctor -v
       - name: Build Web
         run: flutter build web
