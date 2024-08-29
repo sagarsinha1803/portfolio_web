@@ -20,6 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
          flutter pub get
+         flutter pub upgrade
 
       # - name: Analyze
       #   run: flutter analyze
