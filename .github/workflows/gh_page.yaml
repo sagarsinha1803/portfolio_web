@@ -37,5 +37,5 @@ jobs:
           ls -la
           cat home_page.dart
 
-      # - name: Build Web
-      #   run: flutter build web --release
+      - name: Build Web
+        run: flutter build web --release
