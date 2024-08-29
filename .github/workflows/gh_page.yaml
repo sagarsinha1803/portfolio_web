@@ -38,7 +38,7 @@ jobs:
       - name: List directory contents
         run: |
           ls -la
-        #   cd portfolio_web/
+          cd portfolio_web/
         #   ls -la
         #   cd lib/
         #   ls -la
