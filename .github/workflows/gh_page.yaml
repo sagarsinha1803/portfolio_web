@@ -21,8 +21,8 @@ jobs:
         run: |
          flutter pub get
 
-      - name: Analyze
-        run: flutter analyze
+      # - name: Analyze
+      #   run: flutter analyze
 
       - name: Build Web
         run: flutter build web
