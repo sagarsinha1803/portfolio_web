@@ -29,7 +29,13 @@ jobs:
       # - name: Analyze
       #   run: flutter analyze
       - name: List directory contents
-        run: ls -la
+        run: |
+          ls -la
+          cd lib/
+          ls -la
+          cd pages/
+          ls -la
+          cat home_page.dart
 
       # - name: Build Web
       #   run: flutter build web --release
