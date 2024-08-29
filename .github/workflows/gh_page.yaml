@@ -11,13 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Create Working Directory
-        run: mkdir portfolio_web
-
-      - name: Move Files
-        run: mv -v * .[^.]* portfolio_web/ || true
-        working-directory: ${{ github.workspace }}
     
       - name: Setup Dart
         uses: subosito/flutter-action@v2
@@ -25,20 +18,16 @@ jobs:
           channel: stable
           flutter-version: '3.22.1'
     
-      # - name: Install dependencies
-      #   run: |
-      #    flutter pub cache repair
-      #    flutter clean
-      #    flutter pub cache clean
-      #    flutter pub upgrade
-      #    flutter pub get
+      - name: Install dependencies
+        run: |
+         flutter pub get
 
       # - name: Analyze
       #   run: flutter analyze
-      - name: List directory contents
-        run: |
-          ls -la
-          cd portfolio_web/
+      # - name: List directory contents
+      #   run: |
+      #     ls -la
+      #     cd portfolio_web/
         #   ls -la
         #   cd lib/
         #   ls -la
@@ -49,4 +38,3 @@ jobs:
 
       - name: Build Web
         run: flutter build web
-        working-directory: ${{ github.workspace }}
