@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/constants/profile_data.dart';
-import 'package:portfolio_web/constants/size.dart';
-import 'package:portfolio_web/widgets/contact_section/contact_section.dart';
-import 'package:portfolio_web/widgets/footer_section/footer_section.dart';
-import 'package:portfolio_web/widgets/header_section/header_section.dart';
-import 'package:portfolio_web/widgets/header_section/mobile_view_drawer.dart';
-import 'package:portfolio_web/widgets/main_section/main_section.dart';
-import 'package:portfolio_web/widgets/project_section/project_tabview.dart';
-import 'package:portfolio_web/widgets/skill_section/skill_section.dart';
-// import 'package:portfolio_web/widgets/skill_destop.dart';
-// import 'package:portfolio_web/widgets/skill_mobile.dart';
+import '/constants/colors.dart';
+import '/constants/profile_data.dart';
+import '/constants/size.dart';
+import '/widgets/contact_section/contact_section.dart';
+import '/widgets/footer_section/footer_section.dart';
+import '/widgets/header_section/header_section.dart';
+import '/widgets/header_section/mobile_view_drawer.dart';
+import '/widgets/main_section/main_section.dart';
+import '/widgets/project_section/project_tabview.dart';
+import '/widgets/skill_section/skill_section.dart';
+// import '/widgets/skill_destop.dart';
+// import '/widgets/skill_mobile.dart';
 // import 'dart:js' as js;
 
 class Homepage extends StatefulWidget {

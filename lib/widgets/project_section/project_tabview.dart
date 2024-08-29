@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/constants/size.dart';
-import 'package:portfolio_web/utils/project_utils.dart';
-import 'package:portfolio_web/widgets/project_section/project_carousal_view.dart';
+import '/constants/colors.dart';
+import '/constants/size.dart';
+import '/utils/project_utils.dart';
+import '/widgets/project_section/project_carousal_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProjectTabView extends StatefulWidget {

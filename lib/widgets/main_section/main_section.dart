@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/constants/size.dart';
-import 'package:portfolio_web/widgets/main_section/main_desktop.dart';
-import 'package:portfolio_web/widgets/main_section/main_mobile.dart';
+import '/constants/size.dart';
+import '/widgets/main_section/main_desktop.dart';
+import '/widgets/main_section/main_mobile.dart';
 
 class MainSection extends StatelessWidget {
   final double constrainScreenMaxWidth;

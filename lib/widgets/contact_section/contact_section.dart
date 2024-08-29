@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/constants/profile_data.dart';
-import 'package:portfolio_web/constants/size.dart';
-import 'package:portfolio_web/constants/svg_string.dart';
-import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/contact_section/custome_textfield.dart';
+import '/constants/colors.dart';
+import '/constants/profile_data.dart';
+import '/constants/size.dart';
+import '/constants/svg_string.dart';
+import '/styles/style.dart';
+import '/widgets/contact_section/custome_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'dart:js' as js;
 

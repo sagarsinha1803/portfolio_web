@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/constants/colors.dart';
+import '/constants/colors.dart';
 
 class TweenCirculerWidget extends StatefulWidget {
   final Map skillData;

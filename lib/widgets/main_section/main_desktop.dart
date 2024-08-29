@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/styles/style.dart';
-import 'package:portfolio_web/widgets/main_section/animated_intro.dart';
+import '/constants/colors.dart';
+import '/styles/style.dart';
+import '/widgets/main_section/animated_intro.dart';
 
 class MainDesktopView extends StatelessWidget {
   const MainDesktopView({

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/constants/size.dart';
-import 'package:portfolio_web/widgets/skill_section/tween_skill_desktop.dart';
-import 'package:portfolio_web/widgets/skill_section/tween_skill_mobile.dart';
-import 'package:portfolio_web/widgets/skill_section/tween_skill_tablet.dart';
+import '/constants/colors.dart';
+import '/constants/size.dart';
+import '/widgets/skill_section/tween_skill_desktop.dart';
+import '/widgets/skill_section/tween_skill_mobile.dart';
+import '/widgets/skill_section/tween_skill_tablet.dart';
 
 class SkillSection extends StatelessWidget {
   final double screenWidth;

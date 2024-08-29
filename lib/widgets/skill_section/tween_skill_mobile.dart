@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio_web/constants/colors.dart';
-import 'package:portfolio_web/constants/skill_items.dart';
-import 'package:portfolio_web/widgets/skill_section/tween_circular_widget.dart';
-import 'package:portfolio_web/widgets/skill_section/tween_linear_widget.dart';
+import '/constants/colors.dart';
+import '/constants/skill_items.dart';
+import '/widgets/skill_section/tween_circular_widget.dart';
+import '/widgets/skill_section/tween_linear_widget.dart';
 
 class TweenSkillMobile extends StatelessWidget {
   final AnimationController controller;
