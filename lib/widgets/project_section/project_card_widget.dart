@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/constants/colors.dart';
 import 'package:portfolio_web/utils/project_utils.dart';
-import 'dart:js' as js;
+// import 'dart:js' as js;
 
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget({
@@ -77,7 +77,7 @@ class ProjectCardWidget extends StatelessWidget {
                 if (projectUtil.androidLink != null)
                   InkWell(
                     onTap: () {
-                      js.context.callMethod("open", [projectUtil.androidLink]);
+                      // js.context.callMethod("open", [projectUtil.androidLink]);
                     },
                     child: Image.asset(
                       "assets/icons8-android-50.png",
@@ -90,7 +90,7 @@ class ProjectCardWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 6),
                     child: InkWell(
                       onTap: () {
-                        js.context.callMethod("open", [projectUtil.iosLink]);
+                        // js.context.callMethod("open", [projectUtil.iosLink]);
                       },
                       child: Image.asset(
                         "assets/icons8-apple-logo-50.png",
@@ -104,7 +104,7 @@ class ProjectCardWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 6),
                     child: InkWell(
                       onTap: () {
-                        js.context.callMethod("open", [projectUtil.webLink]);
+                        // js.context.callMethod("open", [projectUtil.webLink]);
                       },
                       child: Image.asset(
                         "assets/icons8-web-50.png",

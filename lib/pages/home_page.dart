@@ -12,7 +12,7 @@ import 'package:portfolio_web/widgets/project_section/project_tabview.dart';
 import 'package:portfolio_web/widgets/skill_section/skill_section.dart';
 // import 'package:portfolio_web/widgets/skill_destop.dart';
 // import 'package:portfolio_web/widgets/skill_mobile.dart';
-import 'dart:js' as js;
+// import 'dart:js' as js;
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -132,7 +132,7 @@ class _HomepageState extends State<Homepage>
   void scrollToSection(int navIndex) {
     if (navIndex == 4) {
       // open a page
-      js.context.callMethod("open", [ProfileLinks.blog]);
+      // js.context.callMethod("open", [ProfileLinks.blog]);
     }
     if (navIndex == 1) {
       // reload animation

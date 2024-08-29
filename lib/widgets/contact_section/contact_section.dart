@@ -7,7 +7,7 @@ import 'package:portfolio_web/constants/svg_string.dart';
 import 'package:portfolio_web/styles/style.dart';
 import 'package:portfolio_web/widgets/contact_section/custome_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'dart:js' as js;
+// import 'dart:js' as js;
 
 class ContactSection extends StatelessWidget {
   final double screenWidth;
@@ -121,7 +121,7 @@ class ContactSection extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  js.context.callMethod("open", [ProfileLinks.facebook]);
+                  // js.context.callMethod("open", [ProfileLinks.facebook]);
                 },
                 child: Image.asset(
                   "assets/icons8-facebook-48.png",
@@ -130,7 +130,7 @@ class ContactSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  js.context.callMethod("open", [ProfileLinks.telegram]);
+                  // js.context.callMethod("open", [ProfileLinks.telegram]);
                 },
                 child: Image.asset(
                   "assets/icons8-telegram-48.png",
@@ -139,7 +139,7 @@ class ContactSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  js.context.callMethod("open", [ProfileLinks.instagram]);
+                  // js.context.callMethod("open", [ProfileLinks.instagram]);
                 },
                 child: Image.asset(
                   "assets/icons8-instagram-48.png",
@@ -148,7 +148,7 @@ class ContactSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  js.context.callMethod("open", [ProfileLinks.linkedin]);
+                  // js.context.callMethod("open", [ProfileLinks.linkedin]);
                 },
                 child: Image.asset(
                   "assets/icons8-linkedin-48.png",
@@ -157,7 +157,7 @@ class ContactSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  js.context.callMethod("open", [ProfileLinks.github]);
+                  // js.context.callMethod("open", [ProfileLinks.github]);
                 },
                 child: Image.asset(
                   "assets/icons8-github-48.png",
