@@ -5,7 +5,7 @@ import 'package:portfolio_web/constants/profile_data.dart';
 import 'package:portfolio_web/constants/size.dart';
 import 'package:portfolio_web/widgets/contact_section/contact_section.dart';
 import 'package:portfolio_web/widgets/footer_Section/footer_section.dart';
-import 'package:portfolio_web/widgets/header_Section/header_Section.dart';
+import 'package:portfolio_web/widgets/header_Section/header_section.dart';
 import 'package:portfolio_web/widgets/header_section/mobile_view_drawer.dart';
 import 'package:portfolio_web/widgets/main_section/main_section.dart';
 import 'package:portfolio_web/widgets/project_section/project_tabview.dart';
