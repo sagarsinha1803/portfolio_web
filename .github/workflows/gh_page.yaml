@@ -19,11 +19,11 @@ jobs:
         run: mv -v * .[^.]* portfolio_web/ || true
         working-directory: ${{ github.workspace }}
     
-      # - name: Setup Dart
-      #   uses: subosito/flutter-action@v2
-      #   with:
-      #     channel: stable
-      #     flutter-version: '3.22.1'
+      - name: Setup Dart
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.22.1'
     
       # - name: Install dependencies
       #   run: |
@@ -38,14 +38,15 @@ jobs:
       - name: List directory contents
         run: |
           ls -la
-          cd portfolio_web/
-          ls -la
-          cd lib/
-          ls -la
-          cd pages/
-          ls -la
-          cat home_page.dart
-        working-directory: ${{ github.workspace }}
+        #   cd portfolio_web/
+        #   ls -la
+        #   cd lib/
+        #   ls -la
+        #   cd pages/
+        #   ls -la
+        #   cat home_page.dart
+        # working-directory: ${{ github.workspace }}
 
-      # - name: Build Web
-      #   run: flutter build web --release
+      - name: Build Web
+        run: flutter build web
+        working-directory: ${{ github.workspace }}
