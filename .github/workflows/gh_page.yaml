@@ -19,13 +19,14 @@ jobs:
     
       - name: Install dependencies
         run: |
+         flutter pub cache repair
          flutter clean
-         dart pub cache clean
-         flutter pub get
+         flutter pub cache clean
          flutter pub upgrade
+         flutter pub get
 
       # - name: Analyze
       #   run: flutter analyze
 
       - name: Build Web
-        run: flutter build web
+        run: flutter build web --web-renderer html --release --no-tree-shake-icons
