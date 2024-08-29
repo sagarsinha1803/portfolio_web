@@ -29,7 +29,7 @@ jobs:
       # - name: Analyze
       #   run: flutter analyze
       - name: List directory contents
-        run: ls -la path/to/directory
+        run: ls -la
 
       # - name: Build Web
       #   run: flutter build web --release
