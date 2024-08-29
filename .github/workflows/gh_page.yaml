@@ -6,15 +6,16 @@ on :
 
 jobs:
   build-project:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
     
       - name: Setup Dart
-        uses: cedvdb/action-flutter-build-web@v1
+        uses: subosito/flutter-action@v2
         with:
+          channel: stable
           flutter-version: '3.22.1'
     
       - name: Install dependencies
