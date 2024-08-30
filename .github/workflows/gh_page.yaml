@@ -1,28 +1,17 @@
-name: My Portfolio CI/CD
+name: Gh-Pages
 
-on :
+on:
   push:
-    branches: [feature/side-nav-bar]
+    branches: [cicd]
 
 jobs:
-  build-project:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-    
-      - name: Setup Dart
-        uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+      - uses: bluefireteam/flutter-gh-pages@v8
         with:
-          flutter-version: '3.22.1'
-    
-      - name: Install dependencies
-        run: |
-         flutter pub get
-
-      # - name: Analyze
-      #   run: flutter analyze
-
-      - name: Build Web
-        run: flutter build web
+          baseHref: /portfolio/
+          webRenderer: canvaskit
